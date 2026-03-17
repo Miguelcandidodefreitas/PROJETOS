@@ -1,5 +1,5 @@
 # PROJETOS
-https://miguelcandidodefreitas.github.io/Miguelcandidodefreitas/
+https://miguelcandidodefreitas.github.io/PROJETOS/
 ## 📌 Sobre o projeto
 
 Este projeto é uma landing page temática do anime Death Note, desenvolvida com foco em design e experiência do usuário.
