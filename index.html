@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Death Note</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Share+Tech+Mono&display=swap');
+
+/* HOVER */
+.card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.card:hover {
+    transform: scale(1.07) translateY(-5px);
+    box-shadow: 
+        0 0 15px rgba(255,255,255,0.2),
+        0 0 40px rgba(255,255,255,0.1),
+        0 10px 30px rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.cast-row img {
+    transition: all 0.3s ease;
+}
+
+.card:hover img {
+    filter: brightness(1.1) contrast(1.1);
+    transform: scale(1.05);
+}
+
+.card:hover h2 {
+    text-shadow: 0 0 10px #fff, 0 0 20px #aaa;
+}
+
+/* BODY */
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Share Tech Mono', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    background: #000;
+}
+
+/* FUNDO */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url('https://sm.ign.com/t/ign_br/movie/d/death-note/death-note-o-filme_3hfj.1200.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    filter: brightness(0.3);
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    text-align: center;
+    color: #fff;
+    padding: 2rem 1rem 1.2rem;
+}
+
+.hero section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+/* TÍTULO */
+.title-wrap {
+    display: inline-block;
+}
+
+.title-img {
+    max-width: 100%;
+}
+
+/* GRID */
+.cast-row {
+    margin: 0 auto;
+    width: min(100%, 1200px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* CARDS */
+.cast-row article {
+    background: linear-gradient(180deg, rgba(15,15,15,0.95), rgba(10,10,10,0.7));
+    border-radius: 10px;
+    padding: 0.4rem;
+    text-align: center;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.45);
+}
+
+/* TEXTO */
+.cast-row h2 {
+    color: #f5f5f5;
+}
+
+.cast-row img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.character-note {
+    font-size: 0.84rem;
+    color: #d7d7d7;
+}
+
+/* BOTÃO */
+.more-btn {
+    margin-top: 1rem;
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.more-btn:hover {
+    background: #333;
+}
+
+/* ===== ÍCONES ATUALIZADOS ===== */
+
+.floating-icon {
+    position: fixed;
+    width: 50px;
+    opacity: 0.18;
+    pointer-events: none;
+    animation: floatRandom linear infinite;
+}
+
+/* movimento mais variado */
+@keyframes floatRandom {
+    0% { transform: translate(-10vw, 0); }
+    25% { transform: translate(30vw, 40vh); }
+    50% { transform: translate(70vw, 10vh); }
+    75% { transform: translate(40vw, 80vh); }
+    100% { transform: translate(110vw, 100vh); }
+}
+
+/* velocidades diferentes */
+.f1 { animation-duration: 6s; }
+.f2 { animation-duration: 7s; }
+.f3 { animation-duration: 5s; }
+.f4 { animation-duration: 8s; }
+.f5 { animation-duration: 6.5s; }
+.f6 { animation-duration: 5.5s; }
+.f7 { animation-duration: 7.5s; }
+.f8 { animation-duration: 6.2s; }
+.f9 { animation-duration: 5.8s; }
+.f10 { animation-duration: 6.8s; }
+  
+  /* GLITCH */
+.title-img {
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+    100% { transform: translate(0); }
+}
+
+/* SANGUE */
+.blood {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, #8b0000, transparent);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 999;
+    animation: drip 3s infinite;
+}
+
+@keyframes drip {
+    0% { height: 80px; }
+    50% { height: 130px; }
+    100% { height: 80px; }
+}
+
+</style>
+</head>
+
+<body>
+  <div class="blood"></div>
+
+<!-- ÍCONES -->
+<div class="floating-icons">
+
+
+<main class="hero">
+
+<section>
+
+<div class="title-wrap">
+    <a href="https://fontmeme.com/death-note-font/" target="_blank">
+        <img class="title-img" src="https://fontmeme.com/permalink/260317/d64912fe.png">
+    </a>
+</div>
+
+<p style="max-width: 620px; margin: 0 auto;">
+Death Note é uma série de mangá japonesa, que fala sobre um estudante que encontra um caderno misterioso com o poder de matar qualquer pessoa cujo nome seja escrito nele.
+</p>
+
+</section>
+
+<section class="cast-row">
+
+<article class="card">
+    <h2>Light Yagami</h2>
+    <img src="https://media.tenor.com/RGiZ61qaCx4AAAAC/death-note-kira.gif">
+<p class="character-note">
+Light Yagami é um estudante extremamente inteligente e com forte senso de justiça, que encontra o Death Note e decide usá-lo para eliminar criminosos e criar um “novo mundo”. Ao assumir a identidade de Kira, ele passa de herói a um manipulador frio e calculista, disposto a fazer qualquer coisa para alcançar seu ideal de justiça absoluta.
+</p>
+</article>
+
+<article class="card">
+    <h2>L</h2>
+    <img src="https://www.icegif.com/wp-content/uploads/2022/04/icegif-1393.gif">
+    <p class="character-note">
+L é o maior detetive do mundo, conhecido por sua mente brilhante, comportamento excêntrico e métodos nada convencionais. Mesmo sem revelar sua identidade, ele lidera a investigação contra Kira, usando pura lógica, análise psicológica e estratégia para enfrentar um inimigo que parece impossível de capturar.
+</p>
+</article>
+
+<article class="card">
+    <h2>Ryuk</h2>
+    <img src="https://c.tenor.com/ZFTbDy47HRwAAAAd/death-note-ryuk.gif">
+<p class="character-note">
+Ryuk é um shinigami entediado com o mundo dos deuses da morte, que decide jogar o Death Note no mundo humano apenas por diversão. Observador e sarcástico, ele acompanha Light durante toda a história, não interferindo diretamente, mas se divertindo com o caos e as consequências das escolhas humanas.
+</p>
+</article>
+
+</section>
+
+<div style="text-align:center;">
+    <a class="more-btn" href="https://www.netflix.com/br/title/70204970" target="_blank">
+        Assista Agora
+    </a>
+</div>
+
+</main>
+
+</body>
+</html>
